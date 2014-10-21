@@ -256,6 +256,7 @@ Login.prototype.postLogin = function(req, res, next) {
         if (err) return next(err);
 
         // create session and save the name and email address
+        req.session.uid = user._id;
         req.session.name = user.name;
         req.session.email = user.email;
 
